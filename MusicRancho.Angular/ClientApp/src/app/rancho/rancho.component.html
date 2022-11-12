@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Ranchos</h1>
+
+<p>Listado de ranchos a disposición.</p>
+
+<!-- <p *ngIf="!forecasts"><em>Loading...</em></p> -->
+
+<p>
+  <button class="btn btn-primary" (click)="createRancho()" [routerLink]="['/rancho-create']">Crear rancho</button>
+</p>
+
+<table class='table table-striped' aria-labelledby="tableLabel">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Occupany</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of response?.result">
+      <td>{{ item.name }}</td>
+      <td>{{ item.occupancy }}</td>
+      <td>{{ item.sqft }}</td>
+      <td>A</td>
+    </tr>
+  </tbody>
+</table>
